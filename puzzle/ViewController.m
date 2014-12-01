@@ -51,6 +51,11 @@
     NSLog(@"menuClicked");
 }
 
+-(void)passClicked
+{
+    NSLog(@"passClicked");
+}
+
 -(void)initControllView
 {
     CGRect rect;
@@ -63,13 +68,11 @@
         btn.layer.cornerRadius = 8;
         btn.backgroundColor = color;
         [btn setTitle:@"菜单" forState:UIControlStateNormal];
-        //btn.alpha = 0.6;
         [self.view addSubview:btn];
         
         [btn addTarget:self action:@selector(menuClicked) forControlEvents:UIControlEventTouchUpInside];
         
     }
-    
     
     {
         rect = CGRectMake(20+80+20, 30, 80, 35);
@@ -82,6 +85,19 @@
         stepLabel.backgroundColor = color;
         
         [self.view addSubview:stepLabel];
+    }
+    
+    
+    {
+        rect = CGRectMake(20+80+20+80+20, 30, 80, 35);
+        UIButton * btn  = [[UIButton alloc]initWithFrame:rect];
+        btn.layer.cornerRadius = 8;
+        btn.backgroundColor = color;
+        [btn setTitle:@"关数:1" forState:UIControlStateNormal];
+        [self.view addSubview:btn];
+        
+        [btn addTarget:self action:@selector(passClicked) forControlEvents:UIControlEventTouchUpInside];
+        
     }
     
 }

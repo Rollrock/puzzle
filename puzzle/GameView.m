@@ -11,7 +11,7 @@
 
 
 #define ROW_NUM   4
-#define COL_NUM   4
+#define COL_NUM   4                                           
 #define IMG_NAME_PREFIX @"game"
 
 
