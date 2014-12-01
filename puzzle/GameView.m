@@ -34,15 +34,17 @@
 
 -(id)initWithFrame:(CGRect)frame
 {
-    CGRect rect = [[UIScreen mainScreen] bounds];
-    rect = CGRectMake(BG_H_DIS, 20, rect.size.width-BG_H_DIS*2, rect.size.width-BG_H_DIS*2);
+    //CGRect rect = [[UIScreen mainScreen] bounds];
+    //rect = CGRectMake(BG_H_DIS, 20, rect.size.width-BG_H_DIS*2, rect.size.width-BG_H_DIS*2);
     
-    self = [super initWithFrame:rect];
+    frame = CGRectMake(BG_H_DIS, frame.origin.y, frame.size.width-BG_H_DIS*2, frame.size.width-BG_H_DIS*2);
+    
+    self = [super initWithFrame:frame];
     
     if( self )
     {
-        //self.backgroundColor = [UIColor yellowColor];
         //
+        self.backgroundColor = [UIColor lightGrayColor];
         [self initSeparateImage];
     }
     
@@ -64,7 +66,7 @@
             [self addSubview:imgView];
         }
     }
-
+    
     ///随机打碎图片
     for( int i = 0; i < ROW_NUM*COL_NUM; ++ i )
     {
@@ -118,7 +120,7 @@
     NSLog(@"rightMove");
     
     CGRect rect = imageView.frame;
-
+    
     [UIView animateWithDuration:0.2 animations:^(void){
         imageView.frame = CGRectMake(rect.origin.x - rect.size.width, rect.origin.y, rect.size.width, rect.size.height);
     }];
@@ -140,7 +142,7 @@
     NSLog(@"downMove");
     
     CGRect rect = imageView.frame;
-
+    
     [UIView animateWithDuration:0.2 animations:^(void){
         imageView.frame = CGRectMake(rect.origin.x, rect.origin.y-rect.size.height, rect.size.width, rect.size.height);
     }];
@@ -184,10 +186,10 @@
     CGRect frame = imageView.frame;
     
     
-    //NSLog(@"-%f-%f==%f-%f==%f-%f",frame.origin.x,frame.origin.y,jugeRect.origin.x,jugeRect.origin.y,imgSize.width,imgSize.height);
-          
+    NSLog(@"-%f-%f==%f-%f==%f-%f",frame.origin.x,frame.origin.y,jugeRect.origin.x,jugeRect.origin.y,imgSize.width,imgSize.height);
     
-    if( (int)jugeRect.origin.x == (int)(frame.origin.x + imgSize.width) && (int)jugeRect.origin.y == (int)frame.origin.y )
+    
+    if( jugeRect.origin.x == (frame.origin.x + imgSize.width) && (int)jugeRect.origin.y == (int)frame.origin.y )
     {
         jugeRect = imageView.frame;
         
@@ -263,12 +265,12 @@
 
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end
 

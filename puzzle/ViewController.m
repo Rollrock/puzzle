@@ -16,6 +16,8 @@
     GameView * gameView;
     
     GADBannerView *_bannerView;
+    
+    UILabel * stepLabel;
 }
 @end
 
@@ -25,33 +27,85 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    gameView = [[GameView alloc]init];
+    
+    [self initControllView];
+    
+    //
+    CGRect rect = [[UIScreen mainScreen] bounds];
+    
+    rect = CGRectMake(rect.origin.x, rect.origin.y+75, rect.size.width, rect.size.height);
+    
+    gameView = [[GameView alloc]initWithFrame:rect];
     
     [self.view addSubview:gameView];
     
-    //[self laytouADVView];
-    
-}
-
-
--(void)viewDidAppear:(BOOL)animated
-{
     [self laytouADVView];
     
-    [super viewDidAppear:animated];
+    //
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]];
+    
 }
+
+-(void)menuClicked
+{
+    NSLog(@"menuClicked");
+}
+
+-(void)initControllView
+{
+    CGRect rect;
+    
+    UIColor * color = [UIColor orangeColor];
+    
+    {
+        rect = CGRectMake(20, 30, 80, 35);
+        UIButton * btn  = [[UIButton alloc]initWithFrame:rect];
+        btn.layer.cornerRadius = 8;
+        btn.backgroundColor = color;
+        [btn setTitle:@"菜单" forState:UIControlStateNormal];
+        //btn.alpha = 0.6;
+        [self.view addSubview:btn];
+        
+        [btn addTarget:self action:@selector(menuClicked) forControlEvents:UIControlEventTouchUpInside];
+        
+    }
+    
+    
+    {
+        rect = CGRectMake(20+80+20, 30, 80, 35);
+        stepLabel = [[UILabel alloc]initWithFrame:rect];
+        stepLabel.text = [NSString stringWithFormat:@"步数:999"];
+        stepLabel.textColor = [UIColor whiteColor];
+        stepLabel.textAlignment = NSTextAlignmentCenter;
+        stepLabel.layer.cornerRadius = 8;
+        stepLabel.layer.masksToBounds = YES;
+        stepLabel.backgroundColor = color;
+        
+        [self.view addSubview:stepLabel];
+    }
+    
+}
+
+
 
 -(void)laytouADVView
 {
+    CGRect rect = [[UIScreen mainScreen]bounds];
+    CGPoint pt = CGPointMake(0, rect.origin.y+rect.size.height-kGADAdSizeLargeBanner.size.height-1);
     
-    _bannerView = [[GADBannerView alloc]initWithFrame:CGRectMake(0.0,0,320,100)];//设置位置
+    _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeLargeBanner origin:pt];
     
     _bannerView.adUnitID = ADMOB_ID;//调用你的id
     
     _bannerView.rootViewController = self;
     
-    
     [_bannerView loadRequest:[GADRequest request]];
+    
+    //_bannerView.center = CGPointMake([[UIScreen mainScreen] bounds].size.width/2, pt.y);
+    
+    
+    
+    [self.view addSubview:_bannerView];
     
 }
 

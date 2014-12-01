@@ -18,7 +18,9 @@
 
 @interface GameView : UIView
 
-
 @property(weak) id delegate;
+
+
+-(id)initWithFrame:(CGRect)frame;
 
 @end

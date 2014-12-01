@@ -30,6 +30,7 @@
 		484551951A2B5664009E4947 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 484551941A2B5664009E4947 /* EventKit.framework */; };
 		484551971A2B566F009E4947 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 484551961A2B566F009E4947 /* EventKitUI.framework */; };
 		484551991A2B5677009E4947 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 484551981A2B5677009E4947 /* StoreKit.framework */; };
+		4845519D1A2C8219009E4947 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4845519C1A2C8219009E4947 /* bg@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		484551941A2B5664009E4947 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		484551961A2B566F009E4947 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		484551981A2B5677009E4947 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		4845519C1A2C8219009E4947 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 		4845516D1A28B098009E4947 /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				4845519C1A2C8219009E4947 /* bg@2x.png */,
 				4845516E1A28B098009E4947 /* pic_1.png */,
 			);
 			path = resource;
@@ -308,6 +311,7 @@
 				484551501A28A796009E4947 /* Main.storyboard in Resources */,
 				484551551A28A796009E4947 /* LaunchScreen.xib in Resources */,
 				484551521A28A796009E4947 /* Images.xcassets in Resources */,
+				4845519D1A2C8219009E4947 /* bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +538,7 @@
 				484551661A28A796009E4947 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		484551671A28A796009E4947 /* Build configuration list for PBXNativeTarget "puzzleTests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +547,7 @@
 				484551691A28A796009E4947 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

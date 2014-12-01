@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1A7C54B6-12CB-43E4-B7AD-CF05A53DB97A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>puzzle</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>720BEF86C3EFD29013DBAA93E48282772B0F0834</key>
+		<string>https://github.com/Rollrock/puzzle.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>puzzle.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>720BEF86C3EFD29013DBAA93E48282772B0F0834</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Rollrock/puzzle.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>720BEF86C3EFD29013DBAA93E48282772B0F0834</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>720BEF86C3EFD29013DBAA93E48282772B0F0834</string>
+			<key>IDESourceControlWCCName</key>
+			<string>puzzle</string>
+		</dict>
+	</array>
+</dict>
+</plist>
