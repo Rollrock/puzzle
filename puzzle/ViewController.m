@@ -10,6 +10,8 @@
 #import "GameView.h"
 #import "GADBannerView.h"
 #import "AppDelegate.h"
+#import "PassViewController.h"
+#import "MenuViewController.h"
 
 @interface ViewController ()
 {
@@ -49,11 +51,21 @@
 -(void)menuClicked
 {
     NSLog(@"menuClicked");
+    
+    
+    MenuViewController * vc = [[MenuViewController alloc]init];
+    [self presentViewController:vc animated:YES completion:nil];
+    
 }
 
 -(void)passClicked
 {
     NSLog(@"passClicked");
+    
+    PassViewController * vc = [[PassViewController alloc]init];
+    
+    [self presentViewController:vc animated:YES completion:nil];
+    
 }
 
 -(void)initControllView
