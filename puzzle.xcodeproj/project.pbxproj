@@ -31,8 +31,6 @@
 		484551971A2B566F009E4947 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 484551961A2B566F009E4947 /* EventKitUI.framework */; };
 		484551991A2B5677009E4947 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 484551981A2B5677009E4947 /* StoreKit.framework */; };
 		4845519D1A2C8219009E4947 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4845519C1A2C8219009E4947 /* bg@2x.png */; };
-		484551A11A2CA9F2009E4947 /* PassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4845519F1A2CA9F2009E4947 /* PassViewController.m */; };
-		484551A21A2CA9F2009E4947 /* PassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484551A01A2CA9F2009E4947 /* PassViewController.xib */; };
 		484551A61A2CAF62009E4947 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 484551A41A2CAF62009E4947 /* MenuViewController.m */; };
 		484551A71A2CAF62009E4947 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484551A51A2CAF62009E4947 /* MenuViewController.xib */; };
 		484551A91A2CB26C009E4947 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 484551A81A2CB26C009E4947 /* back.png */; };
@@ -47,6 +45,14 @@
 		489008FA1A40546500BF0F74 /* 3X3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008F71A40546500BF0F74 /* 3X3@2x.png */; };
 		489008FB1A40546500BF0F74 /* 4X4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008F81A40546500BF0F74 /* 4X4@2x.png */; };
 		489008FC1A40546500BF0F74 /* 5X5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008F91A40546500BF0F74 /* 5X5@2x.png */; };
+		489008FF1A406D1700BF0F74 /* PassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 489008FE1A406D1700BF0F74 /* PassViewController.m */; };
+		489009071A4073F000BF0F74 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 489009001A4073F000BF0F74 /* 1.jpg */; };
+		489009081A4073F000BF0F74 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 489009011A4073F000BF0F74 /* 2.jpg */; };
+		489009091A4073F000BF0F74 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 489009021A4073F000BF0F74 /* 3.jpg */; };
+		4890090A1A4073F000BF0F74 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 489009031A4073F000BF0F74 /* 4.jpg */; };
+		4890090B1A4073F000BF0F74 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 489009041A4073F000BF0F74 /* 5.jpg */; };
+		4890090C1A4073F000BF0F74 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 489009051A4073F000BF0F74 /* 6.jpg */; };
+		4890090D1A4073F000BF0F74 /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 489009061A4073F000BF0F74 /* 0.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,9 +110,6 @@
 		484551961A2B566F009E4947 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		484551981A2B5677009E4947 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		4845519C1A2C8219009E4947 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
-		4845519E1A2CA9F2009E4947 /* PassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassViewController.h; sourceTree = "<group>"; };
-		4845519F1A2CA9F2009E4947 /* PassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassViewController.m; sourceTree = "<group>"; };
-		484551A01A2CA9F2009E4947 /* PassViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PassViewController.xib; sourceTree = "<group>"; };
 		484551A31A2CAF62009E4947 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		484551A41A2CAF62009E4947 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		484551A51A2CAF62009E4947 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
@@ -122,6 +125,15 @@
 		489008F71A40546500BF0F74 /* 3X3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3X3@2x.png"; sourceTree = "<group>"; };
 		489008F81A40546500BF0F74 /* 4X4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4X4@2x.png"; sourceTree = "<group>"; };
 		489008F91A40546500BF0F74 /* 5X5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5X5@2x.png"; sourceTree = "<group>"; };
+		489008FD1A406D1700BF0F74 /* PassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassViewController.h; sourceTree = "<group>"; };
+		489008FE1A406D1700BF0F74 /* PassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassViewController.m; sourceTree = "<group>"; };
+		489009001A4073F000BF0F74 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		489009011A4073F000BF0F74 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		489009021A4073F000BF0F74 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		489009031A4073F000BF0F74 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		489009041A4073F000BF0F74 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		489009051A4073F000BF0F74 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
+		489009061A4073F000BF0F74 /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,12 +212,11 @@
 				4845516B1A28A848009E4947 /* GameView.m */,
 				484551701A2A1307009E4947 /* MyImageView.h */,
 				484551711A2A1307009E4947 /* MyImageView.m */,
-				4845519E1A2CA9F2009E4947 /* PassViewController.h */,
-				4845519F1A2CA9F2009E4947 /* PassViewController.m */,
-				484551A01A2CA9F2009E4947 /* PassViewController.xib */,
 				484551A31A2CAF62009E4947 /* MenuViewController.h */,
 				484551A41A2CAF62009E4947 /* MenuViewController.m */,
 				484551A51A2CAF62009E4947 /* MenuViewController.xib */,
+				489008FD1A406D1700BF0F74 /* PassViewController.h */,
+				489008FE1A406D1700BF0F74 /* PassViewController.m */,
 			);
 			path = puzzle;
 			sourceTree = "<group>";
@@ -241,6 +252,13 @@
 		4845516D1A28B098009E4947 /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				489009001A4073F000BF0F74 /* 1.jpg */,
+				489009011A4073F000BF0F74 /* 2.jpg */,
+				489009021A4073F000BF0F74 /* 3.jpg */,
+				489009031A4073F000BF0F74 /* 4.jpg */,
+				489009041A4073F000BF0F74 /* 5.jpg */,
+				489009051A4073F000BF0F74 /* 6.jpg */,
+				489009061A4073F000BF0F74 /* 0.jpg */,
 				489008F71A40546500BF0F74 /* 3X3@2x.png */,
 				489008F81A40546500BF0F74 /* 4X4@2x.png */,
 				489008F91A40546500BF0F74 /* 5X5@2x.png */,
@@ -359,7 +377,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4890090A1A4073F000BF0F74 /* 4.jpg in Resources */,
 				4845516F1A28B098009E4947 /* pic_1.png in Resources */,
+				489009071A4073F000BF0F74 /* 1.jpg in Resources */,
+				489009081A4073F000BF0F74 /* 2.jpg in Resources */,
 				484551501A28A796009E4947 /* Main.storyboard in Resources */,
 				489008F61A40537D00BF0F74 /* 1024.png in Resources */,
 				489008FB1A40546500BF0F74 /* 4X4@2x.png in Resources */,
@@ -368,16 +389,19 @@
 				484551521A28A796009E4947 /* Images.xcassets in Resources */,
 				489008EF1A40537D00BF0F74 /* 58.png in Resources */,
 				489008F51A40537D00BF0F74 /* 512.png in Resources */,
+				4890090D1A4073F000BF0F74 /* 0.jpg in Resources */,
 				489008FC1A40546500BF0F74 /* 5X5@2x.png in Resources */,
+				489009091A4073F000BF0F74 /* 3.jpg in Resources */,
 				489008F01A40537D00BF0F74 /* 80.png in Resources */,
 				489008F41A40537D00BF0F74 /* 256.png in Resources */,
 				484551A91A2CB26C009E4947 /* back.png in Resources */,
 				4845519D1A2C8219009E4947 /* bg@2x.png in Resources */,
+				4890090C1A4073F000BF0F74 /* 6.jpg in Resources */,
 				489008FA1A40546500BF0F74 /* 3X3@2x.png in Resources */,
+				4890090B1A4073F000BF0F74 /* 5.jpg in Resources */,
 				489008F11A40537D00BF0F74 /* 87.png in Resources */,
 				489008F21A40537D00BF0F74 /* 120.png in Resources */,
 				484551A71A2CAF62009E4947 /* MenuViewController.xib in Resources */,
-				484551A21A2CA9F2009E4947 /* PassViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,8 +421,8 @@
 			files = (
 				4845514D1A28A796009E4947 /* ViewController.m in Sources */,
 				484551721A2A1307009E4947 /* MyImageView.m in Sources */,
+				489008FF1A406D1700BF0F74 /* PassViewController.m in Sources */,
 				4845514A1A28A796009E4947 /* AppDelegate.m in Sources */,
-				484551A11A2CA9F2009E4947 /* PassViewController.m in Sources */,
 				484551A61A2CAF62009E4947 /* MenuViewController.m in Sources */,
 				4845516C1A28A848009E4947 /* GameView.m in Sources */,
 				484551471A28A796009E4947 /* main.m in Sources */,

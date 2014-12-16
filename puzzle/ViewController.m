@@ -10,8 +10,8 @@
 #import "GameView.h"
 #import "GADBannerView.h"
 #import "AppDelegate.h"
-#import "PassViewController.h"
 #import "MenuViewController.h"
+#import "PassViewController.h"
 
 @interface ViewController ()<GameViewDelegate>
 {
@@ -66,9 +66,10 @@
 {
     NSDictionary * data = [notification userInfo];
     
-    NSString * str = [data objectForKey:@"change"];
+    NSString * strChange = [data objectForKey:@"change"];
+    //NSString * strPic = [data objectForKey:@"pic"];
     
-    if( [str isEqualToString:@"1"])
+    if( [strChange isEqualToString:@"1"])
     {
         [gameView removeFromSuperview];
         gameView = nil;
@@ -83,7 +84,6 @@
         [self.view addSubview:gameView];
 
     }
-    
 }
 
 

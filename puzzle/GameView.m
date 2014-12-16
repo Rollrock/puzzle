@@ -74,7 +74,10 @@
 
 -(void)initSeparateImage
 {
-    NSArray * array = [self separateImage:[UIImage imageNamed:@"pic_1.png"]];
+    NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+    int value = [def integerForKey:@"picName"];
+    
+    NSArray * array = [self separateImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg",value]]];
     
     for( int i = 0; i < rowNum; ++ i )
     {
