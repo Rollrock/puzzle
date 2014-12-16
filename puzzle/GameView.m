@@ -9,9 +9,6 @@
 #import "GameView.h"
 #import "MyImageView.h"
 
-
-#define ROW_NUM   4
-#define COL_NUM   4                                           
 #define IMG_NAME_PREFIX @"game"
 
 
@@ -26,6 +23,10 @@
     CGRect jugeRect;
     CGSize imgSize;
     int setp;
+    
+    
+    int rowNum;
+    int colNum;
 }
 @end
 
@@ -34,15 +35,13 @@
 
 -(id)initWithFrame:(CGRect)frame
 {
-    //CGRect rect = [[UIScreen mainScreen] bounds];
-    //rect = CGRectMake(BG_H_DIS, 20, rect.size.width-BG_H_DIS*2, rect.size.width-BG_H_DIS*2);
-    
     frame = CGRectMake(BG_H_DIS, frame.origin.y, frame.size.width-BG_H_DIS*2, frame.size.width-BG_H_DIS*2);
     
     self = [super initWithFrame:frame];
     
     if( self )
     {
+        [self initSetting];
         //
         self.backgroundColor = [UIColor lightGrayColor];
         [self initSeparateImage];
@@ -52,15 +51,36 @@
 }
 
 
+-(void)initSetting
+{
+    NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+    int value = [def integerForKey:@"row_col_num"];
+    
+    if( value == 0 )
+    {
+        rowNum = 4;
+        colNum = 4;
+        
+        [def setInteger:4 forKey:@"row_col_num"];
+        
+        [def synchronize];
+    }
+    else
+    {
+        rowNum = value;
+        colNum = value;
+    }
+}
+
 -(void)initSeparateImage
 {
     NSArray * array = [self separateImage:[UIImage imageNamed:@"pic_1.png"]];
     
-    for( int i = 0; i < ROW_NUM; ++ i )
+    for( int i = 0; i < rowNum; ++ i )
     {
-        for( int j = 0; j < COL_NUM; ++ j )
+        for( int j = 0; j < colNum; ++ j )
         {
-            MyImageView * imgView = [array objectAtIndex:i * COL_NUM + j];
+            MyImageView * imgView = [array objectAtIndex:i * colNum + j];
             imgView.delegate = self;
             
             [self addSubview:imgView];
@@ -68,12 +88,12 @@
     }
     
     ///随机打碎图片
-    for( int i = 0; i < ROW_NUM*COL_NUM; ++ i )
+    for( int i = 0; i < rowNum*colNum; ++ i )
     {
-        int rand = arc4random()%(ROW_NUM*COL_NUM);
+        int rand = arc4random()%(rowNum*colNum);
         
         MyImageView * imgView1 = [array objectAtIndex:rand];
-        MyImageView * imgView2 = [array objectAtIndex:ROW_NUM*COL_NUM-rand-1];
+        MyImageView * imgView2 = [array objectAtIndex:rowNum*colNum-rand-1];
         
         CGRect rect = imgView1.frame;
         imgView1.frame = imgView2.frame;
@@ -81,9 +101,9 @@
     }
     
     
-    for( int i = 0; i < ROW_NUM*COL_NUM; ++ i )
+    for( int i = 0; i < rowNum*colNum; ++ i )
     {
-        int rand = arc4random()%(ROW_NUM*COL_NUM);
+        int rand = arc4random()%(rowNum*colNum);
         
         MyImageView * imgView1 = [array objectAtIndex:rand];
         MyImageView * imgView2 = [array objectAtIndex:i];
@@ -94,7 +114,7 @@
     }
     
     //
-    MyImageView * imgView = (MyImageView*)[self viewWithTag:ROW_NUM*COL_NUM-1 + IMAGE_BADE_TAG];
+    MyImageView * imgView = (MyImageView*)[self viewWithTag:rowNum*colNum-1 + IMAGE_BADE_TAG];
     imgView.hidden = YES;
     
     jugeRect = imgView.frame;
@@ -156,7 +176,7 @@
     for( UIImageView * subView  in [self subviews] )
     {
         CGRect frame = subView.frame;
-        CGRect rect = CGRectMake(index%COL_NUM * imgSize.width, index/COL_NUM*imgSize.height,0,0);
+        CGRect rect = CGRectMake(index%colNum * imgSize.width, index/colNum*imgSize.height,0,0);
         
         ++ index;
         
@@ -173,6 +193,7 @@
     return YES;
 }
 
+
 -(void)setpIncrease
 {
     if( [_delegate respondsToSelector:@selector(setpIncrease:)])
@@ -188,7 +209,6 @@
     {
         CGRect frame = imageView.frame;
         
-        
         NSLog(@"-%f-%f==%f-%f==%f-%f",frame.origin.x,frame.origin.y,jugeRect.origin.x,jugeRect.origin.y,imgSize.width,imgSize.height);
         
         if( jugeRect.origin.x == (frame.origin.x + imgSize.width) && (int)jugeRect.origin.y == (int)frame.origin.y && (MOVE_DIR_LEFT == movDir))
@@ -196,6 +216,8 @@
             jugeRect = imageView.frame;
             
             [self leftMove:imageView];
+            
+            [self setpIncrease];
             break;
         }
         
@@ -204,6 +226,7 @@
             jugeRect = imageView.frame;
             [self rightMove:imageView];
             
+            [self setpIncrease];
             break;
         }
         
@@ -211,7 +234,7 @@
         {
             jugeRect = imageView.frame;
             [self downMove:imageView];
-            
+            [self setpIncrease];
             break;
         }
         
@@ -219,7 +242,7 @@
         {
             jugeRect = imageView.frame;
             [self upMove:imageView];
-            
+            [self setpIncrease];
             break;
         }
     }
@@ -242,15 +265,15 @@
     CGSize size;
     size.width = image.size.width >= (bounds.size.width -BG_H_DIS*2)? image.size.width:(bounds.size.width-BG_H_DIS*2);
     
-    float xSep = image.size.width * 1.0 / ROW_NUM;
+    float xSep = image.size.width * 1.0 / rowNum;
     float ySep = xSep;
     
-    imgSize.width = size.width * 1.0 / ROW_NUM;
+    imgSize.width = size.width * 1.0 / rowNum;
     imgSize.height = imgSize.width;
     
-    for( int i = 0; i < ROW_NUM; ++ i )
+    for( int i = 0; i < rowNum; ++ i )
     {
-        for( int j = 0; j < COL_NUM; ++ j )
+        for( int j = 0; j < colNum; ++ j )
         {
             CGRect rect = CGRectMake(j*xSep,i*ySep,xSep,ySep);
             
@@ -260,20 +283,13 @@
             
             imgView.frame = CGRectMake(j*imgSize.width, i*imgSize.height, imgSize.width, imgSize.height);
             
-            
-            imgView.tag = IMAGE_BADE_TAG + i*COL_NUM + j;
+            imgView.tag = IMAGE_BADE_TAG + i*colNum + j;
             [mutArray addObject:imgView];
             
         }
     }
     
     return mutArray;
-}
-
-
--(void)initGameView
-{
-    
 }
 
 

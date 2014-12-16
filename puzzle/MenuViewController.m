@@ -11,6 +11,10 @@
 @interface MenuViewController ()
 - (IBAction)backClicked;
 
+- (IBAction)threeClicked;
+- (IBAction)fourClicked;
+- (IBAction)fiveClicked;
+
 @end
 
 @implementation MenuViewController
@@ -38,5 +42,50 @@
 - (IBAction)backClicked {
     
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)threeClicked {
+    
+    NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+    
+    [def setInteger:3 forKey:@"row_col_num"];
+    [def synchronize];
+    
+    //
+    NSDictionary * dict = [NSDictionary dictionaryWithObject:@"1" forKey:@"change"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"notify" object:nil userInfo:dict];
+
+    //
+    [self backClicked];
+}
+
+- (IBAction)fourClicked {
+    
+    NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+    
+    [def setInteger:4 forKey:@"row_col_num"];
+    [def synchronize];
+    
+    //
+    NSDictionary * dict = [NSDictionary dictionaryWithObject:@"1" forKey:@"change"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"notify" object:nil userInfo:dict];
+
+    //
+    [self backClicked];
+}
+
+- (IBAction)fiveClicked {
+    
+    NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+    
+    [def setInteger:5 forKey:@"row_col_num"];
+    [def synchronize];
+    
+    //
+    NSDictionary * dict = [NSDictionary dictionaryWithObject:@"1" forKey:@"change"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"notify" object:nil userInfo:dict];
+    
+    //
+    [self backClicked];
 }
 @end

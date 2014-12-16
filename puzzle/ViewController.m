@@ -13,13 +13,13 @@
 #import "PassViewController.h"
 #import "MenuViewController.h"
 
-@interface ViewController ()
+@interface ViewController ()<GameViewDelegate>
 {
     GameView * gameView;
     
     GADBannerView *_bannerView;
     
-    UILabel * stepLabel;
+    UILabel * _stepLabel;
 }
 @end
 
@@ -30,6 +30,9 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registerCallback:) name:@"notify" object:nil];
+    
+    //
     [self initControllView];
     
     //
@@ -38,6 +41,7 @@
     rect = CGRectMake(rect.origin.x, rect.origin.y+75, rect.size.width, rect.size.height);
     
     gameView = [[GameView alloc]initWithFrame:rect];
+    gameView.delegate = self;
     
     [self.view addSubview:gameView];
     
@@ -52,9 +56,42 @@
 {
     NSLog(@"menuClicked");
     
-    
     MenuViewController * vc = [[MenuViewController alloc]init];
     [self presentViewController:vc animated:YES completion:nil];
+    
+}
+
+
+-(void)registerCallback:(NSNotification*)notification
+{
+    NSDictionary * data = [notification userInfo];
+    
+    NSString * str = [data objectForKey:@"change"];
+    
+    if( [str isEqualToString:@"1"])
+    {
+        [gameView removeFromSuperview];
+        gameView = nil;
+        
+        CGRect rect = [[UIScreen mainScreen] bounds];
+        
+        rect = CGRectMake(rect.origin.x, rect.origin.y+75, rect.size.width, rect.size.height);
+        
+        gameView = [[GameView alloc]initWithFrame:rect];
+        gameView.delegate = self;
+        
+        [self.view addSubview:gameView];
+
+    }
+    
+}
+
+
+-(void)setpIncrease:(int)setp
+{
+    NSLog(@"-(void)setpIncrease:(int)setp  ---:%d",setp);
+    
+    _stepLabel.text = [NSString stringWithFormat:@"步数:%d",setp];
     
 }
 
@@ -88,15 +125,15 @@
     
     {
         rect = CGRectMake(20+80+20, 30, 80, 35);
-        stepLabel = [[UILabel alloc]initWithFrame:rect];
-        stepLabel.text = [NSString stringWithFormat:@"步数:999"];
-        stepLabel.textColor = [UIColor whiteColor];
-        stepLabel.textAlignment = NSTextAlignmentCenter;
-        stepLabel.layer.cornerRadius = 8;
-        stepLabel.layer.masksToBounds = YES;
-        stepLabel.backgroundColor = color;
+        _stepLabel = [[UILabel alloc]initWithFrame:rect];
+        _stepLabel.text = [NSString stringWithFormat:@"步数:999"];
+        _stepLabel.textColor = [UIColor whiteColor];
+        _stepLabel.textAlignment = NSTextAlignmentCenter;
+        _stepLabel.layer.cornerRadius = 8;
+        _stepLabel.layer.masksToBounds = YES;
+        _stepLabel.backgroundColor = color;
         
-        [self.view addSubview:stepLabel];
+        [self.view addSubview:_stepLabel];
     }
     
     
@@ -111,9 +148,7 @@
         [btn addTarget:self action:@selector(passClicked) forControlEvents:UIControlEventTouchUpInside];
         
     }
-    
 }
-
 
 
 -(void)laytouADVView
@@ -141,6 +176,9 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

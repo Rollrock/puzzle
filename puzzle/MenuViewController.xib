@@ -17,17 +17,45 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8UP-V0-GZH">
                     <rect key="frame" x="237" y="122" width="46" height="30"/>
-                    <state key="normal" title="4X4">
+                    <state key="normal" backgroundImage="4X4.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="fourClicked" destination="-1" eventType="touchUpInside" id="8RB-HK-h16"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auj-uX-5dN">
+                    <rect key="frame" x="237" y="182" width="46" height="30"/>
+                    <state key="normal" backgroundImage="5X5.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="fiveClicked" destination="-1" eventType="touchUpInside" id="dkw-Aj-Lh7"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kl-lL-105">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <state key="normal" image="back.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="15" y="24" width="50" height="50"/>
+                    </variation>
+                    <connections>
+                        <action selector="backClicked" destination="-1" eventType="touchUpInside" id="Yy4-gm-u6Q"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eh2-39-QO6">
                     <rect key="frame" x="237" y="60" width="46" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="70" id="7wm-bV-glL"/>
-                        <constraint firstAttribute="height" constant="30" id="VN6-Yv-rKh"/>
+                        <constraint firstAttribute="width" constant="70" id="7wm-bV-glL">
+                            <variation key="widthClass=compact" constant="120"/>
+                        </constraint>
+                        <constraint firstAttribute="height" constant="30" id="VN6-Yv-rKh">
+                            <variation key="widthClass=compact" constant="50"/>
+                        </constraint>
                     </constraints>
-                    <state key="normal" title="3X3">
+                    <state key="normal" backgroundImage="3X3.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <variation key="default">
@@ -42,23 +70,8 @@
                             <include reference="VN6-Yv-rKh"/>
                         </mask>
                     </variation>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auj-uX-5dN">
-                    <rect key="frame" x="237" y="182" width="46" height="30"/>
-                    <state key="normal" title="5X5">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kl-lL-105">
-                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                    <state key="normal" image="back.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <variation key="widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="15" y="24" width="50" height="50"/>
-                    </variation>
                     <connections>
-                        <action selector="backClicked" destination="-1" eventType="touchUpInside" id="Yy4-gm-u6Q"/>
+                        <action selector="threeClicked" destination="-1" eventType="touchUpInside" id="IvK-Yw-vL3"/>
                     </connections>
                 </button>
             </subviews>
@@ -70,9 +83,9 @@
                 <constraint firstItem="eh2-39-QO6" firstAttribute="height" secondItem="8UP-V0-GZH" secondAttribute="height" id="Nwm-Vo-eYo"/>
                 <constraint firstItem="eh2-39-QO6" firstAttribute="height" secondItem="auj-uX-5dN" secondAttribute="height" id="Qbl-Kr-xgV"/>
                 <constraint firstAttribute="centerX" secondItem="eh2-39-QO6" secondAttribute="centerX" id="RY4-5f-1Ov"/>
-                <constraint firstItem="auj-uX-5dN" firstAttribute="top" secondItem="8UP-V0-GZH" secondAttribute="bottom" constant="30" id="W93-yW-Lhv"/>
+                <constraint firstItem="auj-uX-5dN" firstAttribute="top" secondItem="8UP-V0-GZH" secondAttribute="bottom" constant="40" id="W93-yW-Lhv"/>
                 <constraint firstItem="eh2-39-QO6" firstAttribute="leading" secondItem="8UP-V0-GZH" secondAttribute="leading" id="a1V-it-1os"/>
-                <constraint firstItem="8UP-V0-GZH" firstAttribute="top" secondItem="eh2-39-QO6" secondAttribute="bottom" constant="32" id="dFA-un-xNS"/>
+                <constraint firstItem="8UP-V0-GZH" firstAttribute="top" secondItem="eh2-39-QO6" secondAttribute="bottom" constant="40" id="dFA-un-xNS"/>
                 <constraint firstItem="eh2-39-QO6" firstAttribute="width" secondItem="auj-uX-5dN" secondAttribute="width" id="gDe-SM-pcm"/>
                 <constraint firstAttribute="centerX" secondItem="eh2-39-QO6" secondAttribute="centerX" id="h8u-wd-ha9"/>
                 <constraint firstItem="eh2-39-QO6" firstAttribute="leading" secondItem="auj-uX-5dN" secondAttribute="leading" id="lkU-CI-NTW"/>
@@ -118,6 +131,9 @@
         </view>
     </objects>
     <resources>
+        <image name="3X3.png" width="202" height="78"/>
+        <image name="4X4.png" width="202" height="78"/>
+        <image name="5X5.png" width="202" height="78"/>
         <image name="back.png" width="128" height="128"/>
     </resources>
 </document>

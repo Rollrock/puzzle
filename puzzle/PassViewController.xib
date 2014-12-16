@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PassViewController">
@@ -21,46 +21,46 @@
                         <rect key="frame" x="30" y="19" width="140" height="137"/>
                     </variation>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VVm-bt-UDW">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="VVm-bt-UDW">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <variation key="widthClass=compact" fixedFrame="YES">
                         <rect key="frame" x="30" y="174" width="140" height="137"/>
                     </variation>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EJX-4V-TwZ">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="EJX-4V-TwZ">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <variation key="widthClass=compact" fixedFrame="YES">
                         <rect key="frame" x="206" y="174" width="140" height="137"/>
                     </variation>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JzH-XH-rm9">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="JzH-XH-rm9">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <variation key="widthClass=compact" fixedFrame="YES">
                         <rect key="frame" x="30" y="319" width="140" height="137"/>
                     </variation>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ban-by-gzU">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="ban-by-gzU">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <variation key="widthClass=compact" fixedFrame="YES">
                         <rect key="frame" x="206" y="319" width="140" height="137"/>
                     </variation>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vps-M4-pjx">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="vps-M4-pjx">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <variation key="widthClass=compact" fixedFrame="YES">
                         <rect key="frame" x="30" y="463" width="140" height="137"/>
                     </variation>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KNT-Pm-9k8">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <variation key="widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="206" y="463" width="140" height="137"/>
-                    </variation>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gnV-tJ-2DK">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="gnV-tJ-2DK">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <variation key="widthClass=compact" fixedFrame="YES">
                         <rect key="frame" x="206" y="19" width="140" height="137"/>
+                    </variation>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="KNT-Pm-9k8">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="206" y="463" width="140" height="137"/>
                     </variation>
                 </imageView>
             </subviews>
@@ -73,8 +73,8 @@
                     <exclude reference="JzH-XH-rm9"/>
                     <exclude reference="ban-by-gzU"/>
                     <exclude reference="vps-M4-pjx"/>
-                    <exclude reference="KNT-Pm-9k8"/>
                     <exclude reference="gnV-tJ-2DK"/>
+                    <exclude reference="KNT-Pm-9k8"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -85,8 +85,8 @@
                     <include reference="JzH-XH-rm9"/>
                     <include reference="ban-by-gzU"/>
                     <include reference="vps-M4-pjx"/>
-                    <include reference="KNT-Pm-9k8"/>
                     <include reference="gnV-tJ-2DK"/>
+                    <include reference="KNT-Pm-9k8"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="168" y="140"/>

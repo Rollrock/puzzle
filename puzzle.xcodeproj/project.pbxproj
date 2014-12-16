@@ -36,6 +36,17 @@
 		484551A61A2CAF62009E4947 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 484551A41A2CAF62009E4947 /* MenuViewController.m */; };
 		484551A71A2CAF62009E4947 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484551A51A2CAF62009E4947 /* MenuViewController.xib */; };
 		484551A91A2CB26C009E4947 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 484551A81A2CB26C009E4947 /* back.png */; };
+		489008EF1A40537D00BF0F74 /* 58.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008E71A40537D00BF0F74 /* 58.png */; };
+		489008F01A40537D00BF0F74 /* 80.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008E81A40537D00BF0F74 /* 80.png */; };
+		489008F11A40537D00BF0F74 /* 87.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008E91A40537D00BF0F74 /* 87.png */; };
+		489008F21A40537D00BF0F74 /* 120.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008EA1A40537D00BF0F74 /* 120.png */; };
+		489008F31A40537D00BF0F74 /* 180.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008EB1A40537D00BF0F74 /* 180.png */; };
+		489008F41A40537D00BF0F74 /* 256.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008EC1A40537D00BF0F74 /* 256.png */; };
+		489008F51A40537D00BF0F74 /* 512.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008ED1A40537D00BF0F74 /* 512.png */; };
+		489008F61A40537D00BF0F74 /* 1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008EE1A40537D00BF0F74 /* 1024.png */; };
+		489008FA1A40546500BF0F74 /* 3X3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008F71A40546500BF0F74 /* 3X3@2x.png */; };
+		489008FB1A40546500BF0F74 /* 4X4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008F81A40546500BF0F74 /* 4X4@2x.png */; };
+		489008FC1A40546500BF0F74 /* 5X5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008F91A40546500BF0F74 /* 5X5@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +111,17 @@
 		484551A41A2CAF62009E4947 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		484551A51A2CAF62009E4947 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		484551A81A2CB26C009E4947 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		489008E71A40537D00BF0F74 /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58.png; sourceTree = "<group>"; };
+		489008E81A40537D00BF0F74 /* 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80.png; sourceTree = "<group>"; };
+		489008E91A40537D00BF0F74 /* 87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 87.png; sourceTree = "<group>"; };
+		489008EA1A40537D00BF0F74 /* 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120.png; sourceTree = "<group>"; };
+		489008EB1A40537D00BF0F74 /* 180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 180.png; sourceTree = "<group>"; };
+		489008EC1A40537D00BF0F74 /* 256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 256.png; sourceTree = "<group>"; };
+		489008ED1A40537D00BF0F74 /* 512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 512.png; sourceTree = "<group>"; };
+		489008EE1A40537D00BF0F74 /* 1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1024.png; sourceTree = "<group>"; };
+		489008F71A40546500BF0F74 /* 3X3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3X3@2x.png"; sourceTree = "<group>"; };
+		489008F81A40546500BF0F74 /* 4X4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4X4@2x.png"; sourceTree = "<group>"; };
+		489008F91A40546500BF0F74 /* 5X5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5X5@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +241,17 @@
 		4845516D1A28B098009E4947 /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				489008F71A40546500BF0F74 /* 3X3@2x.png */,
+				489008F81A40546500BF0F74 /* 4X4@2x.png */,
+				489008F91A40546500BF0F74 /* 5X5@2x.png */,
+				489008E71A40537D00BF0F74 /* 58.png */,
+				489008E81A40537D00BF0F74 /* 80.png */,
+				489008E91A40537D00BF0F74 /* 87.png */,
+				489008EA1A40537D00BF0F74 /* 120.png */,
+				489008EB1A40537D00BF0F74 /* 180.png */,
+				489008EC1A40537D00BF0F74 /* 256.png */,
+				489008ED1A40537D00BF0F74 /* 512.png */,
+				489008EE1A40537D00BF0F74 /* 1024.png */,
 				484551A81A2CB26C009E4947 /* back.png */,
 				4845519C1A2C8219009E4947 /* bg@2x.png */,
 				4845516E1A28B098009E4947 /* pic_1.png */,
@@ -328,10 +361,21 @@
 			files = (
 				4845516F1A28B098009E4947 /* pic_1.png in Resources */,
 				484551501A28A796009E4947 /* Main.storyboard in Resources */,
+				489008F61A40537D00BF0F74 /* 1024.png in Resources */,
+				489008FB1A40546500BF0F74 /* 4X4@2x.png in Resources */,
+				489008F31A40537D00BF0F74 /* 180.png in Resources */,
 				484551551A28A796009E4947 /* LaunchScreen.xib in Resources */,
 				484551521A28A796009E4947 /* Images.xcassets in Resources */,
+				489008EF1A40537D00BF0F74 /* 58.png in Resources */,
+				489008F51A40537D00BF0F74 /* 512.png in Resources */,
+				489008FC1A40546500BF0F74 /* 5X5@2x.png in Resources */,
+				489008F01A40537D00BF0F74 /* 80.png in Resources */,
+				489008F41A40537D00BF0F74 /* 256.png in Resources */,
 				484551A91A2CB26C009E4947 /* back.png in Resources */,
 				4845519D1A2C8219009E4947 /* bg@2x.png in Resources */,
+				489008FA1A40546500BF0F74 /* 3X3@2x.png in Resources */,
+				489008F11A40537D00BF0F74 /* 87.png in Resources */,
+				489008F21A40537D00BF0F74 /* 120.png in Resources */,
 				484551A71A2CAF62009E4947 /* MenuViewController.xib in Resources */,
 				484551A21A2CA9F2009E4947 /* PassViewController.xib in Resources */,
 			);

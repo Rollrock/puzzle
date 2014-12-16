@@ -11,5 +11,7 @@
 @interface ViewController : UIViewController
 
 
+-(void)setpIncrease:(int)setp;
+
 @end
 
