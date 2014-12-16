@@ -9,14 +9,28 @@
 #import <UIKit/UIKit.h>
 
 
+typedef enum
+{
+    MOVE_DIR_LEFT,
+    MOVE_DIR_RIGHT,
+    MOVE_DIR_DOWN,
+    MOVE_DIR_UP
+    
+}MOVE_DIR;
+
+
 @protocol  imageDelegate <NSObject>
 
+
 @optional
--(void)moveDection:(UIImageView*)imageView;
+-(void)moveDection:(MOVE_DIR)movDir;
 @end
 
 
 @interface MyImageView : UIImageView
-
+{
+    CGPoint downPT;
+    BOOL canMove;
+}
 @property(weak) id delegate;
 @end

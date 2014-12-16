@@ -181,37 +181,51 @@
     }
 }
 
--(void)moveDection:(UIImageView *)imageView
+
+-(void)moveDection:(MOVE_DIR)movDir
 {
-    CGRect frame = imageView.frame;
-    
-    
-    NSLog(@"-%f-%f==%f-%f==%f-%f",frame.origin.x,frame.origin.y,jugeRect.origin.x,jugeRect.origin.y,imgSize.width,imgSize.height);
-    
-    
-    if( jugeRect.origin.x == (frame.origin.x + imgSize.width) && (int)jugeRect.origin.y == (int)frame.origin.y )
+    for( MyImageView * imageView in [self subviews] )
     {
-        jugeRect = imageView.frame;
+        CGRect frame = imageView.frame;
         
-        [self leftMove:imageView];
-    }
-    else if ( (int)(jugeRect.origin.x +imgSize.width) == (int)frame.origin.x  && (int)jugeRect.origin.y == (int)frame.origin.y )
-    {
-        jugeRect = imageView.frame;
-        [self rightMove:imageView];
-    }
-    else if ( (int)jugeRect.origin.x  == (int)frame.origin.x  && (int)(jugeRect.origin.y +imgSize.height) == (int)frame.origin.y )
-    {
-        jugeRect = imageView.frame;
-        [self downMove:imageView];
-    }
-    else  if ( (int)jugeRect.origin.x  == (int)frame.origin.x  && (int)jugeRect.origin.y  == (int)(frame.origin.y +imgSize.height))
-    {
-        jugeRect = imageView.frame;
-        [self upMove:imageView];
+        
+        NSLog(@"-%f-%f==%f-%f==%f-%f",frame.origin.x,frame.origin.y,jugeRect.origin.x,jugeRect.origin.y,imgSize.width,imgSize.height);
+        
+        if( jugeRect.origin.x == (frame.origin.x + imgSize.width) && (int)jugeRect.origin.y == (int)frame.origin.y && (MOVE_DIR_LEFT == movDir))
+        {
+            jugeRect = imageView.frame;
+            
+            [self leftMove:imageView];
+            break;
+        }
+        
+        if ( ((int)(jugeRect.origin.x +imgSize.width) == (int)frame.origin.x)  && ((int)jugeRect.origin.y == (int)frame.origin.y) &&( MOVE_DIR_RIGHT == movDir ))
+        {
+            jugeRect = imageView.frame;
+            [self rightMove:imageView];
+            
+            break;
+        }
+        
+        if ( ((int)jugeRect.origin.x  == (int)frame.origin.x ) && ((int)(jugeRect.origin.y +imgSize.height) == (int)frame.origin.y )&&( MOVE_DIR_DOWN == movDir ))
+        {
+            jugeRect = imageView.frame;
+            [self downMove:imageView];
+            
+            break;
+        }
+        
+        if ( ((int)jugeRect.origin.x  == (int)frame.origin.x ) && ((int)jugeRect.origin.y  == (int)(frame.origin.y +imgSize.height) )&&( MOVE_DIR_UP == movDir ))
+        {
+            jugeRect = imageView.frame;
+            [self upMove:imageView];
+            
+            break;
+        }
     }
     
     [self checkGameOvew];
+    
 }
 
 
