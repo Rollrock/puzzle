@@ -20,6 +20,9 @@
     GADBannerView *_bannerView;
     
     UILabel * _stepLabel;
+    
+    
+    UIImageView * _bgImgView;
 }
 @end
 
@@ -33,11 +36,15 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registerCallback:) name:@"notify" object:nil];
     
     //
-    [self initControllView];
-    
-    //
     CGRect rect = [[UIScreen mainScreen] bounds];
     
+    _bgImgView = [[UIImageView alloc]initWithFrame:rect];
+    _bgImgView.image = [UIImage imageNamed:@"bg"];
+    [self.view addSubview:_bgImgView];
+    
+    //
+    [self initControllView];
+    //
     rect = CGRectMake(rect.origin.x, rect.origin.y+75, rect.size.width, rect.size.height);
     
     gameView = [[GameView alloc]initWithFrame:rect];
@@ -48,7 +55,7 @@
     [self laytouADVView];
     
     //
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]];
+    ///self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]];
     
 }
 
@@ -67,7 +74,7 @@
     NSDictionary * data = [notification userInfo];
     
     NSString * strChange = [data objectForKey:@"change"];
-    //NSString * strPic = [data objectForKey:@"pic"];
+
     
     if( [strChange isEqualToString:@"1"])
     {
@@ -142,7 +149,7 @@
         UIButton * btn  = [[UIButton alloc]initWithFrame:rect];
         btn.layer.cornerRadius = 8;
         btn.backgroundColor = color;
-        [btn setTitle:@"关数:1" forState:UIControlStateNormal];
+        [btn setTitle:@"图片选择" forState:UIControlStateNormal];
         [self.view addSubview:btn];
         
         [btn addTarget:self action:@selector(passClicked) forControlEvents:UIControlEventTouchUpInside];
@@ -154,9 +161,30 @@
 -(void)laytouADVView
 {
     CGRect rect = [[UIScreen mainScreen]bounds];
-    CGPoint pt = CGPointMake(0, rect.origin.y+rect.size.height-kGADAdSizeLargeBanner.size.height-1);
+    CGPoint pt ;
     
-    _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeLargeBanner origin:pt];
+    if( rect.size.height >= 667 )
+    {
+        pt = CGPointMake(0, rect.origin.y+rect.size.height-kGADAdSizeMediumRectangle.size.height+20);
+        _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeMediumRectangle origin:pt];
+
+    }
+    else if( rect.size.height >= 568 )
+    {
+        pt = CGPointMake(0, rect.origin.y+rect.size.height-kGADAdSizeMediumRectangle.size.height+60);
+        _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeMediumRectangle origin:pt];
+    }
+    else
+    {
+        pt = CGPointMake(0, rect.origin.y+rect.size.height-kGADAdSizeLargeBanner.size.height-1);
+        _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeLargeBanner origin:pt];
+    }
+    
+    
+    
+    NSLog(@"rect:%f-%f",rect.size.height,rect.size.width);
+    
+    
     
     _bannerView.adUnitID = ADMOB_ID;//调用你的id
     
@@ -164,9 +192,12 @@
     
     [_bannerView loadRequest:[GADRequest request]];
     
-    //_bannerView.center = CGPointMake([[UIScreen mainScreen] bounds].size.width/2, pt.y);
     
-    
+    if( rect.size.height >= 568 )
+    {
+        pt = _bannerView.center;
+        _bannerView.center = CGPointMake([[UIScreen mainScreen] bounds].size.width/2, pt.y);
+    }
     
     [self.view addSubview:_bannerView];
     

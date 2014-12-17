@@ -214,7 +214,9 @@
         
         NSLog(@"-%f-%f==%f-%f==%f-%f",frame.origin.x,frame.origin.y,jugeRect.origin.x,jugeRect.origin.y,imgSize.width,imgSize.height);
         
-        if( jugeRect.origin.x == (frame.origin.x + imgSize.width) && (int)jugeRect.origin.y == (int)frame.origin.y && (MOVE_DIR_LEFT == movDir))
+        if( jugeRect.origin.x == (frame.origin.x + imgSize.width)
+           && (int)jugeRect.origin.y == (int)frame.origin.y
+           && (MOVE_DIR_LEFT == movDir))
         {
             jugeRect = imageView.frame;
             
@@ -266,7 +268,7 @@
     
     CGRect bounds = [[UIScreen mainScreen] bounds];
     CGSize size;
-    size.width = image.size.width >= (bounds.size.width -BG_H_DIS*2)? image.size.width:(bounds.size.width-BG_H_DIS*2);
+    size.width = (image.size.width <= (bounds.size.width -BG_H_DIS*2))? image.size.width:(bounds.size.width-BG_H_DIS*2);
     
     float xSep = image.size.width * 1.0 / rowNum;
     float ySep = xSep;

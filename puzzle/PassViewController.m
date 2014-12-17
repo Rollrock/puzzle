@@ -50,15 +50,15 @@
     
     CGFloat imgWidth = (rect.size.width - 10 - 10 - 10)/2;
     
-    for( int i = 0; i < 5; ++ i )
+    for( int i = 0; i < 7; ++ i )
     {
         for( int j = 0; j < 2; ++ j )
         {
-            rect = CGRectMake(10+(imgWidth+10)*j, 10 + (imgWidth + 10)*i, imgWidth, imgWidth);
+            rect = CGRectMake(10+(imgWidth+10)*j, 20 + (imgWidth + 10)*i, imgWidth, imgWidth);
             UIImageView * imgView = [[UIImageView alloc]initWithFrame:rect];
             imgView.layer.cornerRadius = 8;
             imgView.layer.masksToBounds = YES;
-            imgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg",i*2+j]];//[UIImage imageNamed:@"%d.jpg"];
+            imgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"s_%d.jpg",i*2+j]];//[UIImage imageNamed:@"%d.jpg"];
             imgView.tag = i*2+j;
             imgView.userInteractionEnabled = YES;
             
@@ -73,7 +73,7 @@
         }
     }
     
-    scrView.contentSize = CGSizeMake([[UIScreen mainScreen] bounds].size.width, rect.origin.y + rect.size.height);
+    scrView.contentSize = CGSizeMake([[UIScreen mainScreen] bounds].size.width, rect.origin.y + rect.size.height+20);
 }
 
 
