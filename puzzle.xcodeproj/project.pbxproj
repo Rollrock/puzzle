@@ -32,12 +32,13 @@
 		484551A61A2CAF62009E4947 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 484551A41A2CAF62009E4947 /* MenuViewController.m */; };
 		484551A71A2CAF62009E4947 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484551A51A2CAF62009E4947 /* MenuViewController.xib */; };
 		484551A91A2CB26C009E4947 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 484551A81A2CB26C009E4947 /* back.png */; };
+		4846E89F1A42FFF900F4A991 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4846E89C1A42FFF900F4A991 /* SVProgressHUD.bundle */; };
+		4846E8A01A42FFF900F4A991 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4846E89E1A42FFF900F4A991 /* SVProgressHUD.m */; };
 		489008EF1A40537D00BF0F74 /* 58.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008E71A40537D00BF0F74 /* 58.png */; };
 		489008F01A40537D00BF0F74 /* 80.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008E81A40537D00BF0F74 /* 80.png */; };
 		489008F11A40537D00BF0F74 /* 87.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008E91A40537D00BF0F74 /* 87.png */; };
 		489008F21A40537D00BF0F74 /* 120.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008EA1A40537D00BF0F74 /* 120.png */; };
 		489008F31A40537D00BF0F74 /* 180.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008EB1A40537D00BF0F74 /* 180.png */; };
-		489008F41A40537D00BF0F74 /* 256.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008EC1A40537D00BF0F74 /* 256.png */; };
 		489008F51A40537D00BF0F74 /* 512.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008ED1A40537D00BF0F74 /* 512.png */; };
 		489008F61A40537D00BF0F74 /* 1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008EE1A40537D00BF0F74 /* 1024.png */; };
 		489008FA1A40546500BF0F74 /* 3X3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 489008F71A40546500BF0F74 /* 3X3@2x.png */; };
@@ -132,12 +133,14 @@
 		484551A41A2CAF62009E4947 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		484551A51A2CAF62009E4947 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		484551A81A2CB26C009E4947 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		4846E89C1A42FFF900F4A991 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		4846E89D1A42FFF900F4A991 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		4846E89E1A42FFF900F4A991 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		489008E71A40537D00BF0F74 /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58.png; sourceTree = "<group>"; };
 		489008E81A40537D00BF0F74 /* 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80.png; sourceTree = "<group>"; };
 		489008E91A40537D00BF0F74 /* 87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 87.png; sourceTree = "<group>"; };
 		489008EA1A40537D00BF0F74 /* 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120.png; sourceTree = "<group>"; };
 		489008EB1A40537D00BF0F74 /* 180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 180.png; sourceTree = "<group>"; };
-		489008EC1A40537D00BF0F74 /* 256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 256.png; sourceTree = "<group>"; };
 		489008ED1A40537D00BF0F74 /* 512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 512.png; sourceTree = "<group>"; };
 		489008EE1A40537D00BF0F74 /* 1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1024.png; sourceTree = "<group>"; };
 		489008F71A40546500BF0F74 /* 3X3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3X3@2x.png"; sourceTree = "<group>"; };
@@ -264,6 +267,7 @@
 		484551441A28A796009E4947 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4846E89B1A42FFF900F4A991 /* SVProgressHUD */,
 				484551731A2B50ED009E4947 /* admob */,
 				4845516D1A28B098009E4947 /* resource */,
 				484551451A28A796009E4947 /* Info.plist */,
@@ -329,7 +333,6 @@
 				489008E91A40537D00BF0F74 /* 87.png */,
 				489008EA1A40537D00BF0F74 /* 120.png */,
 				489008EB1A40537D00BF0F74 /* 180.png */,
-				489008EC1A40537D00BF0F74 /* 256.png */,
 				489008ED1A40537D00BF0F74 /* 512.png */,
 				489008EE1A40537D00BF0F74 /* 1024.png */,
 				484551A81A2CB26C009E4947 /* back.png */,
@@ -355,6 +358,16 @@
 				484551801A2B50ED009E4947 /* libGoogleAdMobAds.a */,
 			);
 			path = admob;
+			sourceTree = "<group>";
+		};
+		4846E89B1A42FFF900F4A991 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				4846E89C1A42FFF900F4A991 /* SVProgressHUD.bundle */,
+				4846E89D1A42FFF900F4A991 /* SVProgressHUD.h */,
+				4846E89E1A42FFF900F4A991 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -464,7 +477,7 @@
 				4890092E1A41BA7100BF0F74 /* s_4.jpg in Resources */,
 				489009091A4073F000BF0F74 /* 3.jpg in Resources */,
 				489008F01A40537D00BF0F74 /* 80.png in Resources */,
-				489008F41A40537D00BF0F74 /* 256.png in Resources */,
+				4846E89F1A42FFF900F4A991 /* SVProgressHUD.bundle in Resources */,
 				489009351A41BA7100BF0F74 /* s_11.jpg in Resources */,
 				484551A91A2CB26C009E4947 /* back.png in Resources */,
 				4890090C1A4073F000BF0F74 /* 6.jpg in Resources */,
@@ -500,6 +513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4845514D1A28A796009E4947 /* ViewController.m in Sources */,
+				4846E8A01A42FFF900F4A991 /* SVProgressHUD.m in Sources */,
 				484551721A2A1307009E4947 /* MyImageView.m in Sources */,
 				489008FF1A406D1700BF0F74 /* PassViewController.m in Sources */,
 				4845514A1A28A796009E4947 /* AppDelegate.m in Sources */,
@@ -629,6 +643,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = puzzle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -645,6 +660,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = puzzle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

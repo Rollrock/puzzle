@@ -8,6 +8,7 @@
 
 #import "GameView.h"
 #import "MyImageView.h"
+#import "SVProgressHUD.h"
 
 #define IMG_NAME_PREFIX @"game"
 
@@ -76,6 +77,8 @@
 {
     NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
     int value = [def integerForKey:@"picName"];
+    
+
     
     NSArray * array = [self separateImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg",value]]];
     
@@ -193,6 +196,21 @@
     
     NSLog(@"success");
     
+    
+    [SVProgressHUD showWithStatus:@"恭喜，拼图成功~！"];
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^(void){
+       
+        
+        sleep(3.0);
+        
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            [SVProgressHUD dismiss];
+        });
+        
+    });
+    
+    
     return YES;
 }
 
@@ -212,11 +230,9 @@
     {
         CGRect frame = imageView.frame;
         
-        NSLog(@"-%f-%f==%f-%f==%f-%f",frame.origin.x,frame.origin.y,jugeRect.origin.x,jugeRect.origin.y,imgSize.width,imgSize.height);
+        NSLog(@"rollrock-%f-%f==%f-%f==%f-%f",frame.origin.x,frame.origin.y,jugeRect.origin.x,jugeRect.origin.y,imgSize.width,imgSize.height);
         
-        if( jugeRect.origin.x == (frame.origin.x + imgSize.width)
-           && (int)jugeRect.origin.y == (int)frame.origin.y
-           && (MOVE_DIR_LEFT == movDir))
+        if( (int)(jugeRect.origin.x) == (int)(frame.origin.x + imgSize.width) && (int)(jugeRect.origin.y) == (int)(frame.origin.y) && (MOVE_DIR_LEFT == movDir))
         {
             jugeRect = imageView.frame;
             
@@ -226,7 +242,7 @@
             break;
         }
         
-        if ( ((int)(jugeRect.origin.x +imgSize.width) == (int)frame.origin.x)  && ((int)jugeRect.origin.y == (int)frame.origin.y) &&( MOVE_DIR_RIGHT == movDir ))
+        if ( ((int)(jugeRect.origin.x +imgSize.width) == (int)(frame.origin.x))  && ((int)(jugeRect.origin.y) == (int)(frame.origin.y)) &&( MOVE_DIR_RIGHT == movDir ))
         {
             jugeRect = imageView.frame;
             [self rightMove:imageView];
@@ -235,7 +251,7 @@
             break;
         }
         
-        if ( ((int)jugeRect.origin.x  == (int)frame.origin.x ) && ((int)(jugeRect.origin.y +imgSize.height) == (int)frame.origin.y )&&( MOVE_DIR_DOWN == movDir ))
+        if ( ((int)(jugeRect.origin.x)  == (int)(frame.origin.x) ) && ((int)(jugeRect.origin.y +imgSize.height) == (int)(frame.origin.y) )&&( MOVE_DIR_DOWN == movDir ))
         {
             jugeRect = imageView.frame;
             [self downMove:imageView];
@@ -243,7 +259,7 @@
             break;
         }
         
-        if ( ((int)jugeRect.origin.x  == (int)frame.origin.x ) && ((int)jugeRect.origin.y  == (int)(frame.origin.y +imgSize.height) )&&( MOVE_DIR_UP == movDir ))
+        if ( ((int)(jugeRect.origin.x)  == (int)(frame.origin.x )) && ((int)(jugeRect.origin.y)  == (int)(frame.origin.y +imgSize.height) )&&( MOVE_DIR_UP == movDir ))
         {
             jugeRect = imageView.frame;
             [self upMove:imageView];
