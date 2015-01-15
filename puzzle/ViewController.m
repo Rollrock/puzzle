@@ -12,8 +12,11 @@
 #import "AppDelegate.h"
 #import "MenuViewController.h"
 #import "PassViewController.h"
+#import "BaiduMobAdView.h"
+#import "BaiduMobAdDelegateProtocol.h"
+#import "BaiduMobAdInterstitial.h"
 
-@interface ViewController ()<GameViewDelegate>
+@interface ViewController ()<GameViewDelegate,BaiduMobAdViewDelegate,BaiduMobAdInterstitialDelegate>
 {
     GameView * gameView;
     
@@ -158,49 +161,107 @@
 }
 
 
+- (NSString *)publisherId
+{
+    return @"bf498248";
+}
+
+/**
+ *  应用在union.baidu.com上的APPID
+ */
+- (NSString*) appSpec
+{
+    return @"bf498248";
+}
+
+
 -(void)laytouADVView
 {
-    CGRect rect = [[UIScreen mainScreen]bounds];
-    CGPoint pt ;
     
-    if( rect.size.height >= 667 )
+    int rand = arc4random()%(3);
+    
+    NSLog(@"rand:%d",rand);
+    
+    if( rand == 0 )
     {
-        pt = CGPointMake(0, rect.origin.y+rect.size.height-kGADAdSizeMediumRectangle.size.height+20);
-        _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeMediumRectangle origin:pt];
+        CGRect rect = [[UIScreen mainScreen] bounds];
+        
+        BaiduMobAdView * _baiduView = [[BaiduMobAdView alloc]init];
+        _baiduView.AdType = BaiduMobAdViewTypeBanner;
+        
+        if( rect.size.height == 480 )
+        {
+            _baiduView.frame = CGRectMake(0, 400, kBaiduAdViewBanner320x48.width, kBaiduAdViewBanner320x48.height);
+        }
+        else if( rect.size.height == 1136/2 )
+        {
+            _baiduView.frame = CGRectMake(0, 380, kBaiduAdViewSquareBanner300x250.width, kBaiduAdViewSquareBanner300x250.height);
+        }
+        else if( rect.size.height == 667 )
+        {
+            _baiduView.frame = CGRectMake(0, 430, kBaiduAdViewSquareBanner600x500.width, kBaiduAdViewSquareBanner600x500.height);
+        }
+        else if( rect.size.height == 2208/3 )
+        {
+            _baiduView.frame = CGRectMake(0, 470, kBaiduAdViewSquareBanner600x500.width, kBaiduAdViewSquareBanner600x500.height);
+        }
+        
+        
+        _baiduView.center = CGPointMake(rect.size.width/2, _baiduView.center.y);
+        _baiduView.delegate = self;
+        [self.view addSubview:_baiduView];
+        [_baiduView start];
 
-    }
-    else if( rect.size.height >= 568 )
-    {
-        pt = CGPointMake(0, rect.origin.y+rect.size.height-kGADAdSizeMediumRectangle.size.height+60);
-        _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeMediumRectangle origin:pt];
     }
     else
     {
-        pt = CGPointMake(0, rect.origin.y+rect.size.height-kGADAdSizeLargeBanner.size.height-1);
-        _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeLargeBanner origin:pt];
+        CGRect rect = [[UIScreen mainScreen]bounds];
+        CGPoint pt ;
+        
+        if( rect.size.height >= 667 )
+        {
+            pt = CGPointMake(0, rect.origin.y+rect.size.height-kGADAdSizeMediumRectangle.size.height+20);
+            _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeMediumRectangle origin:pt];
+            
+        }
+        else if( rect.size.height >= 568 )
+        {
+            pt = CGPointMake(0, rect.origin.y+rect.size.height-kGADAdSizeMediumRectangle.size.height+60);
+            _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeMediumRectangle origin:pt];
+        }
+        else
+        {
+            pt = CGPointMake(0, rect.origin.y+rect.size.height-kGADAdSizeLargeBanner.size.height-1);
+            _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeLargeBanner origin:pt];
+        }
+        
+        
+        
+        NSLog(@"rect:%f-%f",rect.size.height,rect.size.width);
+        
+        
+        
+        _bannerView.adUnitID = ADMOB_ID;//调用你的id
+        
+        _bannerView.rootViewController = self;
+        
+        [_bannerView loadRequest:[GADRequest request]];
+        
+        
+        if( rect.size.height >= 568 )
+        {
+            pt = _bannerView.center;
+            _bannerView.center = CGPointMake([[UIScreen mainScreen] bounds].size.width/2, pt.y);
+        }
+        
+        [self.view addSubview:_bannerView];
+        
     }
     
     
     
-    NSLog(@"rect:%f-%f",rect.size.height,rect.size.width);
-    
-    
-    
-    _bannerView.adUnitID = ADMOB_ID;//调用你的id
-    
-    _bannerView.rootViewController = self;
-    
-    [_bannerView loadRequest:[GADRequest request]];
-    
-    
-    if( rect.size.height >= 568 )
-    {
-        pt = _bannerView.center;
-        _bannerView.center = CGPointMake([[UIScreen mainScreen] bounds].size.width/2, pt.y);
-    }
-    
-    [self.view addSubview:_bannerView];
-    
+    /*
+     */
 }
 
 

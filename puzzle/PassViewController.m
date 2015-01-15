@@ -50,7 +50,7 @@
     
     CGFloat imgWidth = (rect.size.width - 10 - 10 - 10)/2;
     
-    for( int i = 0; i < 7; ++ i )
+    for( int i = 0; i < 9; ++ i )
     {
         for( int j = 0; j < 2; ++ j )
         {

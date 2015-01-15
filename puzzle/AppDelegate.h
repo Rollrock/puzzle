@@ -6,6 +6,11 @@
 //  Copyright (c) 2014年 zhuang chaoxiao. All rights reserved.
 //
 
+
+/*
+ http://blog.csdn.net/nyh1006/article/details/41948777
+ */
+
 #import <UIKit/UIKit.h>
 
 
